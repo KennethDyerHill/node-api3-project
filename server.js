@@ -15,16 +15,16 @@ server.use(logger);
 server.use('/api/posts', logger, postRouter);
 server.use('/api/users', logger, userRouter);
 
-server.get('/', (request, response) => {
+server.get('/', (req, res) => {
   response.send('<h1>User and Post API</h1>');
 });
 
 //custom middleware
-function logger(request, response, next) {
+function logger(req, res, next) {
   console.log(`
   {
-      method: ${request.method},
-      url: ${request.url},
+      method: ${req.method},
+      url: ${req.url},
       timestamp: ${new Date().toLocaleString()}
   }
   `);
