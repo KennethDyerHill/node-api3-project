@@ -16,7 +16,7 @@ server.use('/api/posts', logger, postRouter);
 server.use('/api/users', logger, userRouter);
 
 server.get('/', (req, res) => {
-  response.send('<h1>User and Post API</h1>');
+  res.send('<h1>User and Post API</h1>');
 });
 
 //custom middleware
